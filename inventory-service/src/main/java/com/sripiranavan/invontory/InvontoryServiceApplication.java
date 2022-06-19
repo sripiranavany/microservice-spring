@@ -5,9 +5,11 @@ import com.sripiranavan.invontory.repository.InventoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class InvontoryServiceApplication {
 
 	public static void main(String[] args) {
@@ -23,8 +25,8 @@ public class InvontoryServiceApplication {
 			inventoryRepository.save(inventory);
 
 			Inventory inventory2 = new Inventory();
-			inventory2.setSkuCode("iphone_11");
-			inventory2.setQuantity(10);
+			inventory2.setSkuCode("iphone_13_red");
+			inventory2.setQuantity(0);
 			inventoryRepository.save(inventory2);
 		};
 	}
